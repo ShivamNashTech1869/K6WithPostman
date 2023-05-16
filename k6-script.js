@@ -25,8 +25,6 @@ postman[Symbol.for("initial")]({
   }
 });
 
-const myCustomTrend = new Trend('myCustomTrend'); // Initialize the custom trend that we'll use to track response times
-
 export default function() {
   postman[Request]({
     name: "GetUsersList",
@@ -103,11 +101,6 @@ export default function() {
     }
   });
 }
-
-  export function teardown() {
-    // Output the custom trend data at the end of the test
-    console.log('MyCustomTrend:', JSON.stringify(myCustomTrend));
-  }
 
   export function handleSummary(data) {
     console.log('HTML Report is generated as result.html')
